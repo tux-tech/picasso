@@ -1,0 +1,750 @@
+{
+  "version": "2.0.0",
+  "presets": {
+    "webready": {
+      "description": "Optimized for web - smallest size with acceptable quality",
+      "enabled": true,
+      "input_formats": ["jpg", "jpeg", "png", "gif", "bmp", "tiff", "tif"],
+      "output_format": "webp",
+      "quality": 65,
+      "method": 6,
+      "alpha_quality": 80,
+      "lossless": false,
+      "near_lossless": false,
+      "file_handling": {
+        "mode": "preserve",
+        "delete_originals": false,
+        "move_originals_to": null,
+        "backup_enabled": false,
+        "backup_folder": "originals_backup"
+      },
+      "output": {
+        "mode": "subfolder",
+        "subfolder_name": "webp",
+        "custom_path": null,
+        "preserve_structure": true,
+        "flatten": false,
+        "append_suffix": null,
+        "same_directory": false
+      },
+      "resizing": {
+        "enabled": false,
+        "width": null,
+        "height": null,
+        "maintain_aspect": true,
+        "max_dimension": null,
+        "min_dimension": null
+      },
+      "metadata": {
+        "preserve_all": true,
+        "preserve_exif": true,
+        "preserve_icc": true,
+        "preserve_xmp": false,
+        "strip_all": false
+      },
+      "advanced": {
+        "preprocessing": {
+          "enabled": false,
+          "sharpen": false,
+          "sharpen_amount": 0.5,
+          "auto_orient": true,
+          "crop": null
+        },
+        "postprocessing": {
+          "enabled": false,
+          "run_after": null
+        },
+        "filters": {
+          "enabled": false,
+          "brightness": null,
+          "contrast": null,
+          "blur": null
+        }
+      },
+      "optimization": {
+        "multi_pass": false,
+        "pass_count": 1
+      }
+    },
+    "medium": {
+      "description": "Balanced quality and size",
+      "enabled": true,
+      "input_formats": ["jpg", "jpeg", "png", "gif", "bmp", "tiff", "tif"],
+      "output_format": "webp",
+      "quality": 75,
+      "method": 4,
+      "alpha_quality": 90,
+      "lossless": false,
+      "near_lossless": false,
+      "file_handling": {
+        "mode": "preserve",
+        "delete_originals": false,
+        "move_originals_to": null,
+        "backup_enabled": false,
+        "backup_folder": "originals_backup"
+      },
+      "output": {
+        "mode": "subfolder",
+        "subfolder_name": "webp",
+        "custom_path": null,
+        "preserve_structure": true,
+        "flatten": false,
+        "append_suffix": null,
+        "same_directory": false
+      },
+      "resizing": {
+        "enabled": false,
+        "width": null,
+        "height": null,
+        "maintain_aspect": true,
+        "max_dimension": null,
+        "min_dimension": null
+      },
+      "metadata": {
+        "preserve_all": true,
+        "preserve_exif": true,
+        "preserve_icc": true,
+        "preserve_xmp": false,
+        "strip_all": false
+      },
+      "advanced": {
+        "preprocessing": {
+          "enabled": false,
+          "sharpen": false,
+          "sharpen_amount": 0.5,
+          "auto_orient": true,
+          "crop": null
+        },
+        "postprocessing": {
+          "enabled": false,
+          "run_after": null
+        },
+        "filters": {
+          "enabled": false,
+          "brightness": null,
+          "contrast": null,
+          "blur": null
+        }
+      },
+      "optimization": {
+        "multi_pass": false,
+        "pass_count": 1
+      }
+    },
+    "large": {
+      "description": "High quality for archival",
+      "enabled": true,
+      "input_formats": ["jpg", "jpeg", "png", "gif", "bmp", "tiff", "tif"],
+      "output_format": "webp",
+      "quality": 90,
+      "method": 6,
+      "alpha_quality": 100,
+      "lossless": false,
+      "near_lossless": false,
+      "file_handling": {
+        "mode": "preserve",
+        "delete_originals": false,
+        "move_originals_to": null,
+        "backup_enabled": false,
+        "backup_folder": "originals_backup"
+      },
+      "output": {
+        "mode": "subfolder",
+        "subfolder_name": "webp",
+        "custom_path": null,
+        "preserve_structure": true,
+        "flatten": false,
+        "append_suffix": null,
+        "same_directory": false
+      },
+      "resizing": {
+        "enabled": false,
+        "width": null,
+        "height": null,
+        "maintain_aspect": true,
+        "max_dimension": null,
+        "min_dimension": null
+      },
+      "metadata": {
+        "preserve_all": true,
+        "preserve_exif": true,
+        "preserve_icc": true,
+        "preserve_xmp": true,
+        "strip_all": false
+      },
+      "advanced": {
+        "preprocessing": {
+          "enabled": false,
+          "sharpen": false,
+          "sharpen_amount": 0.5,
+          "auto_orient": true,
+          "crop": null
+        },
+        "postprocessing": {
+          "enabled": false,
+          "run_after": null
+        },
+        "filters": {
+          "enabled": false,
+          "brightness": null,
+          "contrast": null,
+          "blur": null
+        }
+      },
+      "optimization": {
+        "multi_pass": false,
+        "pass_count": 1
+      }
+    },
+    "backup-convert": {
+      "description": "Create backup folder, convert with medium settings",
+      "enabled": true,
+      "input_formats": ["jpg", "jpeg", "png", "gif", "bmp", "tiff", "tif"],
+      "output_format": "webp",
+      "quality": 75,
+      "method": 4,
+      "alpha_quality": 90,
+      "lossless": false,
+      "near_lossless": false,
+      "file_handling": {
+        "mode": "backup",
+        "delete_originals": false,
+        "move_originals_to": "originals_backup",
+        "backup_enabled": true,
+        "backup_folder": "originals_backup"
+      },
+      "output": {
+        "mode": "subfolder",
+        "subfolder_name": "webp",
+        "custom_path": null,
+        "preserve_structure": true,
+        "flatten": false,
+        "append_suffix": null,
+        "same_directory": false
+      },
+      "resizing": {
+        "enabled": false,
+        "width": null,
+        "height": null,
+        "maintain_aspect": true,
+        "max_dimension": null,
+        "min_dimension": null
+      },
+      "metadata": {
+        "preserve_all": true,
+        "preserve_exif": true,
+        "preserve_icc": true,
+        "preserve_xmp": false,
+        "strip_all": false
+      },
+      "advanced": {
+        "preprocessing": {
+          "enabled": false,
+          "sharpen": false,
+          "sharpen_amount": 0.5,
+          "auto_orient": true,
+          "crop": null
+        },
+        "postprocessing": {
+          "enabled": false,
+          "run_after": null
+        },
+        "filters": {
+          "enabled": false,
+          "brightness": null,
+          "contrast": null,
+          "blur": null
+        }
+      },
+      "optimization": {
+        "multi_pass": false,
+        "pass_count": 1
+      }
+    },
+    "move-originals": {
+      "description": "Convert and move originals to specified folder",
+      "enabled": true,
+      "input_formats": ["jpg", "jpeg", "png", "gif", "bmp", "tiff", "tif"],
+      "output_format": "webp",
+      "quality": 75,
+      "method": 4,
+      "alpha_quality": 90,
+      "lossless": false,
+      "near_lossless": false,
+      "file_handling": {
+        "mode": "move",
+        "delete_originals": false,
+        "move_originals_to": "old_images",
+        "backup_enabled": false,
+        "backup_folder": "originals_backup"
+      },
+      "output": {
+        "mode": "same_directory",
+        "subfolder_name": null,
+        "custom_path": null,
+        "preserve_structure": true,
+        "flatten": false,
+        "append_suffix": null,
+        "same_directory": true
+      },
+      "resizing": {
+        "enabled": false,
+        "width": null,
+        "height": null,
+        "maintain_aspect": true,
+        "max_dimension": null,
+        "min_dimension": null
+      },
+      "metadata": {
+        "preserve_all": true,
+        "preserve_exif": true,
+        "preserve_icc": true,
+        "preserve_xmp": false,
+        "strip_all": false
+      },
+      "advanced": {
+        "preprocessing": {
+          "enabled": false,
+          "sharpen": false,
+          "sharpen_amount": 0.5,
+          "auto_orient": true,
+          "crop": null
+        },
+        "postprocessing": {
+          "enabled": false,
+          "run_after": null
+        },
+        "filters": {
+          "enabled": false,
+          "brightness": null,
+          "contrast": null,
+          "blur": null
+        }
+      },
+      "optimization": {
+        "multi_pass": false,
+        "pass_count": 1
+      }
+    },
+    "export-folder": {
+      "description": "Convert to a completely separate output directory",
+      "enabled": true,
+      "input_formats": ["jpg", "jpeg", "png", "gif", "bmp", "tiff", "tif"],
+      "output_format": "webp",
+      "quality": 75,
+      "method": 4,
+      "alpha_quality": 90,
+      "lossless": false,
+      "near_lossless": false,
+      "file_handling": {
+        "mode": "preserve",
+        "delete_originals": false,
+        "move_originals_to": null,
+        "backup_enabled": false,
+        "backup_folder": "originals_backup"
+      },
+      "output": {
+        "mode": "custom_path",
+        "subfolder_name": null,
+        "custom_path": "./converted_output",
+        "preserve_structure": true,
+        "flatten": false,
+        "append_suffix": null,
+        "same_directory": false
+      },
+      "resizing": {
+        "enabled": false,
+        "width": null,
+        "height": null,
+        "maintain_aspect": true,
+        "max_dimension": null,
+        "min_dimension": null
+      },
+      "metadata": {
+        "preserve_all": true,
+        "preserve_exif": true,
+        "preserve_icc": true,
+        "preserve_xmp": false,
+        "strip_all": false
+      },
+      "advanced": {
+        "preprocessing": {
+          "enabled": false,
+          "sharpen": false,
+          "sharpen_amount": 0.5,
+          "auto_orient": true,
+          "crop": null
+        },
+        "postprocessing": {
+          "enabled": false,
+          "run_after": null
+        },
+        "filters": {
+          "enabled": false,
+          "brightness": null,
+          "contrast": null,
+          "blur": null
+        }
+      },
+      "optimization": {
+        "multi_pass": false,
+        "pass_count": 1
+      }
+    },
+    "delete-after-convert": {
+      "description": "Convert and delete originals (dangerous!)",
+      "enabled": true,
+      "input_formats": ["jpg", "jpeg", "png", "gif", "bmp", "tiff", "tif"],
+      "output_format": "webp",
+      "quality": 75,
+      "method": 4,
+      "alpha_quality": 90,
+      "lossless": false,
+      "near_lossless": false,
+      "file_handling": {
+        "mode": "delete",
+        "delete_originals": true,
+        "move_originals_to": null,
+        "backup_enabled": false,
+        "backup_folder": null
+      },
+      "output": {
+        "mode": "same_directory",
+        "subfolder_name": null,
+        "custom_path": null,
+        "preserve_structure": true,
+        "flatten": false,
+        "append_suffix": null,
+        "same_directory": true
+      },
+      "resizing": {
+        "enabled": false,
+        "width": null,
+        "height": null,
+        "maintain_aspect": true,
+        "max_dimension": null,
+        "min_dimension": null
+      },
+      "metadata": {
+        "preserve_all": true,
+        "preserve_exif": true,
+        "preserve_icc": true,
+        "preserve_xmp": false,
+        "strip_all": false
+      },
+      "advanced": {
+        "preprocessing": {
+          "enabled": false,
+          "sharpen": false,
+          "sharpen_amount": 0.5,
+          "auto_orient": true,
+          "crop": null
+        },
+        "postprocessing": {
+          "enabled": false,
+          "run_after": null
+        },
+        "filters": {
+          "enabled": false,
+          "brightness": null,
+          "contrast": null,
+          "blur": null
+        }
+      },
+      "optimization": {
+        "multi_pass": false,
+        "pass_count": 1
+      }
+    },
+    "optimize-webp": {
+      "description": "Re-optimize existing WebP files for smaller size",
+      "enabled": true,
+      "input_formats": ["webp"],
+      "output_format": "webp",
+      "quality": 75,
+      "method": 6,
+      "alpha_quality": 90,
+      "lossless": false,
+      "near_lossless": false,
+      "file_handling": {
+        "mode": "backup",
+        "delete_originals": false,
+        "move_originals_to": "original_webp",
+        "backup_enabled": true,
+        "backup_folder": "original_webp"
+      },
+      "output": {
+        "mode": "same_directory",
+        "subfolder_name": null,
+        "custom_path": null,
+        "preserve_structure": true,
+        "flatten": false,
+        "append_suffix": "_optimized",
+        "same_directory": true
+      },
+      "resizing": {
+        "enabled": false,
+        "width": null,
+        "height": null,
+        "maintain_aspect": true,
+        "max_dimension": null,
+        "min_dimension": null
+      },
+      "metadata": {
+        "preserve_all": true,
+        "preserve_exif": true,
+        "preserve_icc": true,
+        "preserve_xmp": false,
+        "strip_all": false
+      },
+      "advanced": {
+        "preprocessing": {
+          "enabled": false,
+          "sharpen": false,
+          "sharpen_amount": 0.5,
+          "auto_orient": true,
+          "crop": null
+        },
+        "postprocessing": {
+          "enabled": false,
+          "run_after": null
+        },
+        "filters": {
+          "enabled": false,
+          "brightness": null,
+          "contrast": null,
+          "blur": null
+        }
+      },
+      "optimization": {
+        "multi_pass": true,
+        "pass_count": 2
+      }
+    },
+    "thumbnail": {
+      "description": "Create small thumbnails",
+      "enabled": true,
+      "input_formats": ["jpg", "jpeg", "png", "gif", "bmp", "tiff", "tif"],
+      "output_format": "webp",
+      "quality": 60,
+      "method": 4,
+      "alpha_quality": 80,
+      "lossless": false,
+      "near_lossless": false,
+      "file_handling": {
+        "mode": "preserve",
+        "delete_originals": false,
+        "move_originals_to": null,
+        "backup_enabled": false,
+        "backup_folder": null
+      },
+      "output": {
+        "mode": "subfolder",
+        "subfolder_name": "thumbnails",
+        "custom_path": null,
+        "preserve_structure": true,
+        "flatten": false,
+        "append_suffix": "_thumb",
+        "same_directory": false
+      },
+      "resizing": {
+        "enabled": true,
+        "width": 300,
+        "height": 300,
+        "maintain_aspect": true,
+        "max_dimension": 300,
+        "min_dimension": null
+      },
+      "metadata": {
+        "preserve_all": false,
+        "preserve_exif": false,
+        "preserve_icc": true,
+        "preserve_xmp": false,
+        "strip_all": true
+      },
+      "advanced": {
+        "preprocessing": {
+          "enabled": false,
+          "sharpen": true,
+          "sharpen_amount": 0.3,
+          "auto_orient": true,
+          "crop": null
+        },
+        "postprocessing": {
+          "enabled": false,
+          "run_after": null
+        },
+        "filters": {
+          "enabled": false,
+          "brightness": null,
+          "contrast": null,
+          "blur": null
+        }
+      },
+      "optimization": {
+        "multi_pass": false,
+        "pass_count": 1
+      }
+    },
+    "lossless": {
+      "description": "Lossless compression for maximum quality",
+      "enabled": true,
+      "input_formats": ["png", "bmp", "tiff", "tif"],
+      "output_format": "webp",
+      "quality": 100,
+      "method": 6,
+      "alpha_quality": 100,
+      "lossless": true,
+      "near_lossless": false,
+      "file_handling": {
+        "mode": "preserve",
+        "delete_originals": false,
+        "move_originals_to": null,
+        "backup_enabled": false,
+        "backup_folder": null
+      },
+      "output": {
+        "mode": "subfolder",
+        "subfolder_name": "webp_lossless",
+        "custom_path": null,
+        "preserve_structure": true,
+        "flatten": false,
+        "append_suffix": null,
+        "same_directory": false
+      },
+      "resizing": {
+        "enabled": false,
+        "width": null,
+        "height": null,
+        "maintain_aspect": true,
+        "max_dimension": null,
+        "min_dimension": null
+      },
+      "metadata": {
+        "preserve_all": true,
+        "preserve_exif": true,
+        "preserve_icc": true,
+        "preserve_xmp": true,
+        "strip_all": false
+      },
+      "advanced": {
+        "preprocessing": {
+          "enabled": false,
+          "sharpen": false,
+          "sharpen_amount": 0.5,
+          "auto_orient": true,
+          "crop": null
+        },
+        "postprocessing": {
+          "enabled": false,
+          "run_after": null
+        },
+        "filters": {
+          "enabled": false,
+          "brightness": null,
+          "contrast": null,
+          "blur": null
+        }
+      },
+      "optimization": {
+        "multi_pass": false,
+        "pass_count": 1
+      }
+    },
+    "strip-metadata": {
+      "description": "Convert and remove all metadata for privacy",
+      "enabled": true,
+      "input_formats": ["jpg", "jpeg", "png", "gif", "bmp", "tiff", "tif", "webp"],
+      "output_format": "webp",
+      "quality": 75,
+      "method": 4,
+      "alpha_quality": 90,
+      "lossless": false,
+      "near_lossless": false,
+      "file_handling": {
+        "mode": "preserve",
+        "delete_originals": false,
+        "move_originals_to": null,
+        "backup_enabled": false,
+        "backup_folder": null
+      },
+      "output": {
+        "mode": "subfolder",
+        "subfolder_name": "cleaned",
+        "custom_path": null,
+        "preserve_structure": true,
+        "flatten": false,
+        "append_suffix": null,
+        "same_directory": false
+      },
+      "resizing": {
+        "enabled": false,
+        "width": null,
+        "height": null,
+        "maintain_aspect": true,
+        "max_dimension": null,
+        "min_dimension": null
+      },
+      "metadata": {
+        "preserve_all": false,
+        "preserve_exif": false,
+        "preserve_icc": false,
+        "preserve_xmp": false,
+        "strip_all": true
+      },
+      "advanced": {
+        "preprocessing": {
+          "enabled": false,
+          "sharpen": false,
+          "sharpen_amount": 0.5,
+          "auto_orient": true,
+          "crop": null
+        },
+        "postprocessing": {
+          "enabled": false,
+          "run_after": null
+        },
+        "filters": {
+          "enabled": false,
+          "brightness": null,
+          "contrast": null,
+          "blur": null
+        }
+      },
+      "optimization": {
+        "multi_pass": false,
+        "pass_count": 1
+      }
+    }
+  },
+  "default_preset": "webready",
+  "last_used": {
+    "preset": null,
+    "directory": null,
+    "timestamp": null
+  },
+  "settings": {
+    "default_parallel": true,
+    "default_verbose": false,
+    "default_log": false,
+    "log_file": "/tmp/picasso.log",
+    "supported_input_formats": ["jpg", "jpeg", "png", "gif", "bmp", "tiff", "tif", "webp"],
+    "supported_output_formats": ["webp"],
+    "max_parallel_workers": null,
+    "confirm_dangerous_operations": true,
+    "show_compression_stats": true,
+    "auto_check_updates": false
+  },
+  "file_handling_modes": {
+    "preserve": "Keep originals in place (default)",
+    "delete": "Delete originals after successful conversion",
+    "move": "Move originals to a specified folder",
+    "backup": "Create backup before conversion"
+  },
+  "output_modes": {
+    "subfolder": "Create a subfolder within source directory",
+    "same_directory": "Save in same directory as source",
+    "custom_path": "Save to a completely different directory",
+    "flatten": "Flatten all images to single output folder"
+  }
+}
