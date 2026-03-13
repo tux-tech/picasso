@@ -1,3 +1,8 @@
+<p align="center">
+  <img src="picasso.png" alt="picasso logo" width="700">
+</p>
+
+
 # PICASSO - WebP Image Conversion Tool
 
 <p align="center">
