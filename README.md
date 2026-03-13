@@ -2,7 +2,6 @@
   <img src="picasso.png" alt="picasso logo" width="700">
 </p>
 
-
 # PICASSO - WebP Image Conversion Tool
 
 <p align="center">
@@ -21,10 +20,17 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/version-2.0.0-blue.svg" alt="Version">
+  <a href="https://github.com/tux-tech/picasso">
+    <img src="https://img.shields.io/badge/version-2.0.0-blue.svg" alt="Version">
+  </a>
   <img src="https://img.shields.io/badge/platform-Linux-orange.svg" alt="Platform">
   <img src="https://img.shields.io/badge/license-MIT-green.svg" alt="License">
   <img src="https://img.shields.io/badge/language-Bash%20%7C%20Perl-purple.svg" alt="Language">
+</p>
+
+<p align="center">
+  <a href="https://github.com/tux-tech/picasso/issues">Report Bug</a> •
+  <a href="https://github.com/tux-tech/picasso/issues">Request Feature</a>
 </p>
 
 ---
@@ -37,6 +43,7 @@
 - **⚙️ Preset System** - Save and reuse conversion configurations
 - **📊 Progress Tracking** - Real-time progress bars with ETA estimation
 - **🔄 Multi-core Processing** - Parallel conversion utilizing all CPU cores
+- **📦 Auto-Dependency Installation** - Installer handles all dependencies
 
 ### NEW in v2.0 - Advanced Options
 
@@ -65,51 +72,41 @@
 
 ---
 
-## 📋 Requirements
-
-### Required Dependencies
-
-| Package | Description | Install Command |
-|---------|-------------|-----------------|
-| `webp` | WebP encoder (cwebp) | `sudo apt-get install webp` |
-| `perl` | Perl interpreter | Usually pre-installed |
-| `whiptail` | TUI dialogs | `sudo apt-get install whiptail` |
-
-### Optional Dependencies
-
-| Package | Description | Install Command |
-|---------|-------------|-----------------|
-| `libjson-perl` | JSON config parsing | `sudo apt-get install libjson-perl` |
-| `libterm-progressbar-perl` | Progress bars | `sudo apt-get install libterm-progressbar-perl` |
-
-### Quick Install (Debian/Ubuntu)
-
-```bash
-sudo apt-get update
-sudo apt-get install webp whiptail libjson-perl libterm-progressbar-perl
-```
-
----
-
 ## 🚀 Installation
 
-### Method 1: Standard Installation
+### Quick Install
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/picasso.git
+git clone https://github.com/tux-tech/picasso.git
 cd picasso
 
-# Run the installer
+# Run the installer (auto-installs dependencies)
 ./install.sh
 ```
+
+That's it! The installer will:
+- ✅ **Auto-detect your package manager** (apt, dnf, yum, pacman)
+- ✅ **Install all required dependencies** automatically
+- ✅ **Set up the binary** in your PATH
+- ✅ **Create configuration** with default presets
 
 ### Installation Options
 
 The installer will ask:
 
 1. **Local User (~/.local/bin)** - Recommended for personal use
-2. **System Wide (/usr/local/bin)** - For all users (requires sudo)
+2. **System Wide (/usr/local/bin)** - For all users (requires root)
+
+### Installer Commands
+
+```bash
+./install.sh              # Full interactive installation
+./install.sh --repair     # Repair existing installation
+./install.sh --deps-only  # Only install dependencies
+./install.sh --uninstall  # Remove PICASSO
+./install.sh --help       # Show all options
+```
 
 ### Post-Installation
 
@@ -120,13 +117,27 @@ echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-### Repair/Reinstall
+---
 
-```bash
-./install.sh          # Interactive reinstall
-./install.sh --repair # Quick repair mode
-./install.sh --uninstall # Remove PICASSO
-```
+## 📋 Requirements
+
+The installer handles these automatically, but for reference:
+
+### Required Dependencies
+
+| Package | Description |
+|---------|-------------|
+| `webp` | WebP encoder (cwebp) |
+| `perl` | Perl interpreter |
+| `whiptail` | TUI dialogs |
+| `findutils` | File searching |
+
+### Optional Dependencies
+
+| Package | Description |
+|---------|-------------|
+| `libjson-perl` | JSON config parsing |
+| `libterm-progressbar-perl` | Progress bars |
 
 ---
 
@@ -192,50 +203,18 @@ picasso wizard
 
 The wizard guides you through all options:
 
-#### Step 1: Preset Name
-Give your preset a unique identifier.
-
-#### Step 2: Conversion Mode
-- **Standard** - Normal quality-based compression
-- **Lossless** - Perfect quality (PNG source recommended)
-- **Near-Lossless** - Almost perfect with smaller files
-- **Optimize** - Re-compress existing WebP files
-
-#### Step 3: Quality Selection
-Choose from presets (Minimum → Maximum) or enter custom value (0-100).
-
-#### Step 4: Compression Method
-Speed vs compression tradeoff:
-- **0**: Fastest, larger files
-- **4**: Balanced (recommended)
-- **6**: Slowest, smallest files
-
-#### Step 5: Alpha Quality
-For transparent PNGs (0-100, 100 = lossless transparency)
-
-#### Step 6: File Handling
-- **Preserve**: Keep originals in place
-- **Delete**: Remove after conversion ⚠️
-- **Move**: Move to specified folder
-- **Backup**: Create backup before converting
-
-#### Step 7: Output Location
-- **Subfolder**: Create folder in source directory
-- **Same Directory**: Save alongside originals
-- **Custom Path**: Different directory entirely
-- **Flatten**: All images to single folder
-
-#### Step 8: Resizing (Optional)
-- Exact width × height
-- Maximum dimension (maintains aspect)
-- Percentage scaling
-
-#### Step 9: Metadata
-- Preserve EXIF, ICC, XMP
-- Strip all metadata for privacy
-
-#### Step 10: Description & Save
-Add a description and confirm settings.
+| Step | Option | Description |
+|------|--------|-------------|
+| 1 | Preset Name | Unique identifier |
+| 2 | Conversion Mode | Standard/Lossless/Near-Lossless/Optimize |
+| 3 | Quality | 0-100 or presets |
+| 4 | Compression Method | 0-6 (speed vs size) |
+| 5 | Alpha Quality | For transparent PNGs |
+| 6 | File Handling | Preserve/Delete/Move/Backup |
+| 7 | Output Location | Subfolder/Same/Custom/Flatten |
+| 8 | Resizing | Optional dimensions |
+| 9 | Metadata | Preserve or strip |
+| 10 | Description | Save with notes |
 
 ---
 
@@ -350,11 +329,6 @@ The optimizer:
 ### Example 1: Website Optimization
 
 ```bash
-# Create web-optimized preset
-picasso wizard
-# Quality: 65, Method: 6, Subfolder: webp
-
-# Convert all website images
 picasso webready /var/www/html/images/
 
 # Result: Smaller images in /var/www/html/images/webp/
@@ -363,46 +337,26 @@ picasso webready /var/www/html/images/
 ### Example 2: Photo Archive with Backup
 
 ```bash
-# Use backup preset
 picasso backup-convert ./raw_photos/
 
 # Result:
-# ./raw_photos/webp/          - Converted images
+# ./raw_photos/webp/           - Converted images
 # ./raw_photos/originals_backup/ - Original backups
 ```
 
 ### Example 3: Move Originals After Convert
 
 ```bash
-# Create move preset
-picasso wizard
-# File Mode: Move
-# Move To: old_jpegs
-
 picasso move-originals ./photos/
 
 # Result:
-# ./photos/old_jpegs/ - Original JPGs
-# ./photos/*.webp     - Converted files
+# ./photos/old_images/ - Original JPGs
+# ./photos/*.webp      - Converted files
 ```
 
-### Example 4: Export to Separate Directory
+### Example 4: Privacy-Focused Conversion
 
 ```bash
-# Create export preset
-picasso wizard
-# Output Mode: Custom Path
-# Custom Path: ./converted_output
-
-picasso export-folder ./source_photos/
-
-# Result: All in ./converted_output/ preserving structure
-```
-
-### Example 5: Privacy-Focused Conversion
-
-```bash
-# Strip all metadata
 picasso strip-metadata ./private_photos/
 
 # Result: Clean images with no EXIF/GPS data
@@ -501,22 +455,23 @@ Add to PATH:
 export PATH="$HOME/.local/bin:$PATH"
 ```
 
-### "cwebp: command not found"
+### Missing Dependencies
 
+Run the installer - it handles everything:
 ```bash
-sudo apt-get install webp
+./install.sh
 ```
 
-### "whiptail: command not found"
-
+Or manually:
 ```bash
-sudo apt-get install whiptail
-```
+# Debian/Ubuntu
+sudo apt-get install webp whiptail libjson-perl libterm-progressbar-perl
 
-### Progress bar not showing
+# Fedora/RHEL
+sudo dnf install libwebp-tools newt perl-JSON perl-Term-ProgressBar
 
-```bash
-sudo apt-get install libterm-progressbar-perl
+# Arch
+sudo pacman -S libwebp libnewt perl perl-json
 ```
 
 ### Repair Installation
@@ -524,6 +479,18 @@ sudo apt-get install libterm-progressbar-perl
 ```bash
 ./install.sh --repair
 ```
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ---
 
@@ -540,6 +507,11 @@ MIT License - See [LICENSE](LICENSE) for details.
 - [newt/whiptail](https://pagure.io/newt) for TUI dialogs
 
 ---
+
+<p align="center">
+  <a href="https://github.com/tux-tech/picasso">GitHub</a> •
+  <a href="https://github.com/tux-tech/picasso/issues">Issues</a>
+</p>
 
 <p align="center">
   Made with ❤️ for the Linux community
